@@ -1,0 +1,185 @@
+/* homepage.css — Guessr */
+:root {
+  --bg: #1e1f22;
+  --panel: #24262a;
+  --text: #e7e7e7;
+  --muted: #b5b5b5;
+  --primary: #ffffff;
+  --accent: #6ee7ff;
+  --tile: #2b2e33;
+  --tile-border: #3a3e45;
+  --overlay: rgba(0,0,0,.6);
+  --focus: #7dd3fc;
+  --radius: 16px;
+  --shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+
+/* RESET */
+*,*::before,*::after{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Arial,"Apple Color Emoji","Segoe UI Emoji";
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+button{font:inherit;color:inherit}
+
+/* Layout */
+.shell{max-width:auto;margin:24px auto;padding:16px}
+.panel{
+  background:var(--panel);
+  border-radius:var(--radius);
+  padding:32px;
+  box-shadow:var(--shadow);
+  max-width:1400px;
+  margin-inline:auto;
+}
+
+/* Header avec titre site */
+header{display:flex;align-items:center;justify-content:center;margin:32px 0 24px}
+.logo{
+  font-family:"Audiowide",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  font-weight:900;
+  letter-spacing:.18em;
+  font-size:clamp(32px,7vw,72px);
+  text-align:center
+}
+.logo span{display:inline-block}
+
+/* Tiles */
+.tiles{
+  display:grid;
+  gap:22px;
+  margin-top:12px;
+  align-items:center;
+  justify-content:center;
+}
+
+/* >961px : 4 colonnes centrées */
+@media (min-width:961px){
+  .tiles{
+    grid-template-columns:repeat(4,minmax(260px,1fr));
+    max-width:1200px;
+    margin-inline:auto;
+    justify-content:center;
+  }
+}
+
+/* Moyens écrans */
+@media (max-width:960px){
+  .tiles{grid-template-columns:repeat(2,1fr)}
+}
+
+/* Petits écrans */
+@media (max-width:560px){
+  .tiles{grid-template-columns:1fr}
+}
+
+.tile{
+  background:var(--tile);
+  border:1px solid var(--tile-border);
+  border-radius:14px;
+  overflow:hidden;
+  display:block;
+  transition:transform .15s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.tile:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.tile:hover{transform:translateY(-3px);box-shadow:0 15px 40px rgba(0,0,0,.35);border-color:#4a90e2}
+
+.thumb{
+  aspect-ratio:1/1;
+  width:100%;
+  background:#353a42;
+  display:grid;
+  place-items:center;
+  position:relative;
+}
+.thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+
+.label{padding:10px 12px 14px;font-weight:600;color:var(--text)}
+
+/* Footer links */
+footer{display:flex;align-items:center;justify-content:space-between;margin-top:30px}
+.footer-left,.footer-right{display:flex;gap:18px;flex-wrap:wrap}
+.as-link{background:transparent;border:0;padding:0;cursor:pointer;color:var(--muted)}
+.as-link:hover,.as-link:focus{color:var(--primary)}
+.as-link:focus-visible{outline:3px solid var(--focus);border-radius:6px}
+
+/* Modal */
+.modal{
+  position:fixed;
+  inset:0;
+  display:none;
+  place-items:center;
+  background:var(--overlay);
+  z-index:50;
+}
+.modal[aria-hidden="false"]{display:grid}
+.dialog{
+  background:var(--panel);
+  width:min(800px,92vw);
+  max-height:84vh;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+}
+.dialog header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin:0;
+  padding:14px 18px;
+  border-bottom:1px solid var(--tile-border);
+}
+.dialog h3{margin:0;font-size:18px;letter-spacing:.04em}
+.dialog .close{
+  border:0;
+  background:transparent;
+  font-size:28px;
+  line-height:1;
+  cursor:pointer;
+  color:var(--muted);
+}
+.dialog .close:hover{color:var(--primary)}
+.dialog main{padding:0}
+.dialog main .content{
+  padding:18px;
+  overflow:auto;
+  max-height:calc(84vh - 56px);
+}
+
+/* Placeholder */
+.placeholder{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:14px;
+  color:#9aa1aa;
+}
+
+/* ─────────────────────────────────────────────── */
+/* 1) XXL — écrans larges (≥1280px)               */
+/* ─────────────────────────────────────────────── */
+@media (min-width:1280px){
+  .shell{max-width:1280px}
+  /* On conserve 4 colonnes centrées */
+  .logo{font-size:clamp(40px,6vw,86px)}
+}
+
+/* ─────────────────────────────────────────────── */
+/* 2) Ultra-compact — très petits écrans (≤360px) */
+/* ─────────────────────────────────────────────── */
+@media (max-width:360px){
+  .shell{padding:10px}
+  .panel{padding:18px;border-radius:12px}
+  header{margin:18px 0 12px}
+  .logo{letter-spacing:.14em;font-size:28px}
+  .tiles{gap:14px}
+  .tile{border-radius:10px}
+  .label{padding:8px 10px 10px;font-weight:600;font-size:14px}
+  footer{flex-direction:column;gap:10px;align-items:flex-start}
+  .footer-right{gap:12px}
+}

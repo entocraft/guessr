@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GUESSR — Accueil</title>
+  <link rel="stylesheet" href="homepage.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+  <script src="homepage.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <div class="panel">
+      <header aria-label="En-tête">
+        <h1 class="logo" aria-label="GUESSR">GUESSR</h1>
+      </header>
+
+      <section class="tiles" aria-label="Choix de catégories">
+        <!-- Constellation guessr -->
+        <a class="tile" href="guessr-constellations/index.php" title="Constellation">
+          <div class="thumb">
+            <img src="./guessr-constellations/assets/img/constellation_guessr_couv.png" alt="Constellation" loading="lazy" />
+          </div>
+          <div class="label">Constellation</div>
+        </a>
+
+        <!-- Transit guessr -->
+        <a class="tile" href="guessr-transit/index.php" title="Transit">
+          <div class="thumb">
+            <img src="./guessr-transit/assets/img/transit_guessr_couv.jpg" alt="Transit" loading="lazy" />
+          </div>
+          <div class="label">Transit</div>
+        </a>
+<!-- Remplacer images -->
+        <!-- Tennis guessr -->
+        <a class="tile" href="#tennis" title="Tennis">
+          <div class="thumb">
+            <img src="https://picsum.photos/seed/tennis/900/900" alt="Tennis" loading="lazy" />
+          </div>
+          <div class="label">Tennis</div>
+        </a>
+
+        <!-- Ghibli guessr -->
+        <a class="tile" href="#ghibli" title="Ghibli">
+          <div class="thumb">
+            <img src="https://picsum.photos/seed/ghibli/900/900" alt="Ghibli" loading="lazy" />
+          </div>
+          <div class="label">Ghibli</div>
+        </a>
+      </section>
+
+      <footer>
+        <div class="footer-left">
+          <button class="as-link modal-open" data-title="Contacts" data-url="contact.html">Contacts</button>
+        </div>
+        <div class="footer-right">
+          <button class="as-link modal-open" data-title="Mentions légales" data-url="/ajax/mentions-legales.html">Mentions légales</button>
+          <button class="as-link modal-open" data-title="Politique de confidentialité" data-url="/ajax/politique-confidentialite.html">Politique de confidentialité</button>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal" id="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="dialog">
+      <header>
+        <h3 id="modal-title">Titre</h3>
+        <button class="close" aria-label="Fermer" id="modal-close">×</button>
+      </header>
+      <main>
+        <div class="content" id="modal-content">
+          <p class="placeholder">Chargement…</p>
+        </div>
+      </main>
+    </div>
+  </div>
+</body>
+</html>

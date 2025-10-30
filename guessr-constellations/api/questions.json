@@ -1,0 +1,232 @@
+[
+  {
+    "id": 1,
+    "image": "cercle_constellation_begin.jpg",
+    "name": "1) Qu’est-ce qu’une constellation ?",
+    "wiki": "https://fr.wikipedia.org/wiki/Constellation",
+    "namer": "Définition",
+    "description": "Une constellation est un groupe d’étoiles qu’on relie par l’imagination pour former une figure. Ce sont des repères, pas des ensembles physiques d’étoiles proches entre elles.",
+    "options": [
+      {
+        "value": "figure_imaginaire",
+        "label": "Un groupe d’étoiles qu’on relie par l’imagination pour former une figure"
+      },
+      {
+        "value": "trou_noir",
+        "label": "Un trou noir entouré d’étoiles"
+      },
+      {
+        "value": "galaxie",
+        "label": "Une galaxie contenant des millions d’étoiles"
+      }
+    ],
+    "correct_value": "figure_imaginaire"
+  },
+  {
+    "id": 2,
+    "image": "observation_ciel.png",
+    "name": "2) À quoi servaient les constellations pour les anciens peuples ?",
+    "wiki": "https://spaceplace.nasa.gov/constellations/en/",
+    "namer": "Utilité",
+    "description": "Les constellations permettaient de se repérer dans le ciel et de prévoir les saisons agricoles selon leurs apparitions.",
+    "options": [
+      {
+        "value": "temblement_terre",
+        "label": "À prédire les tremblements de terre"
+      },
+      {
+        "value": "orientation",
+        "label": "À s’orienter et à prévoir les saisons"
+      },
+      {
+        "value": "taille_terre",
+        "label": "À connaître la taille de la Terre"
+      }
+    ],
+    "correct_value": "orientation"
+  },
+  {
+    "id": 3,
+    "image": "orion.png",
+    "name": "3) Quel mythe célèbre est associé à la constellation d’Orion ?",    
+    "wiki": "https://fr.wikipedia.org/wiki/Orion_(constellation)",
+    "namer": "Orion",
+    "description": "Orion, chasseur géant et orgueilleux, fut tué par un scorpion envoyé par la déesse Gaïa. Les deux constellations (Orion et Scorpius) ne se croisent jamais dans le ciel.",
+    "options": [
+      {
+        "value": "chasseur",
+        "label": "Un chasseur puni pour son arrogance"
+      },
+      {
+        "value": "roi",
+        "label": "Un roi transformé en étoile"
+      },
+      {
+        "value": "marin",
+        "label": "Un marin perdu en mer"
+      }
+    ],
+    "correct_value": "chasseur"
+  },
+  {
+    "id": 4,
+    "image": "constellation_dragon.png",
+    "name": "4) Quelle civilisation a divisé le ciel en 283 constellations et 28 demeures lunaires ?",
+    "wiki": "hhttps://fr.wikipedia.org/wiki/Astronomie_chinoise",
+    "namer": "Chine ancienne",
+    "description": "Les astronomes chinois ont organisé le ciel en 283 constellations réparties dans 28 zones liées au cycle de la Lune, symbolisant les quatre points cardinaux.",
+    "options": [
+      {
+        "value": "grecs",
+        "label": "Les Grecs"
+      },
+      {
+        "value": "chinois",
+        "label": "Les Chinois"
+      },
+      {
+        "value": "egyptiens",
+        "label": "Les Égyptiens"
+      }
+    ],
+    "correct_value": "chinois"
+  },
+  {
+    "id": 5,
+    "image": "ptolemee.png",
+    "name": " 5) Qui est considéré comme le premier cartographe du ciel ?",
+    "wiki": "https://fr.wikipedia.org/wiki/Claude_Ptol%C3%A9m%C3%A9e",
+    "namer": "Ptolémée",
+    "description": "Au IIᵉ siècle, Ptolémée a décrit 48 constellations dans son ouvrage l’Almageste, une référence pendant plus de 1 000 ans.",
+    "options": [
+      {
+        "value": "galilée",
+        "label": "Galilée"
+      },
+      {
+        "value": "ptolémée",
+        "label": "Ptolémée"
+      },
+      {
+        "value": "copernic",
+        "label": "Copernic"
+      }
+    ],
+    "correct_value": "ptolémée"
+  },
+  {
+    "id": 6,
+    "image": "caroline_herschel.png",
+    "name": "6) Quelle astronome du XVIIIᵉ siècle est connue pour avoir découvert 8 comètes ?",
+    "wiki": "https://fr.wikipedia.org/wiki/Caroline_Herschel",
+    "namer": "Caroline Herschel",
+    "description": "Caroline Herschel fut une pionnière reconnue pour ses découvertes et son rôle dans la précision des cartes du ciel.",
+    "options": [
+      {
+        "value": "cannon",
+        "label": "Annie Cannon"
+      },
+      {
+        "value": "herschel",
+        "label": "Caroline Herschel"
+      },
+      {
+        "value": "curie",
+        "label": "Marie Curie"
+      }
+    ],
+    "correct_value": "herschel"
+  },
+  {
+    "id": 7,
+    "image": "constellations_amerindiens.png",
+    "name": "7) En quelle année l’Union Astronomique Internationale a-t-elle fixé la liste officielle des constellations ?",
+    "wiki": "https://fr.wikipedia.org/wiki/Union_astronomique_internationale",
+    "namer": "UAI",
+    "description": "En 1922, l’UAI a standardisé les 88 constellations officielles couvrant tout le ciel, une référence encore utilisée aujourd’hui.",
+    "options": [
+      {
+        "value": "1922",
+        "label": "1922"
+      },
+      {
+        "value": "1945",
+        "label": "1945"
+      },
+      {
+        "value": "1969",
+        "label": "1969"
+      }
+    ],
+    "correct_value": "1922"
+  },
+  {
+    "id": 8,
+    "image": "grande_ourse.webp",
+    "name": "8) Quelle constellation en forme de casserole permet de trouver l’étoile polaire ?",
+    "wiki": "https://fr.wikipedia.org/wiki/Grande_Ourse",
+    "namer": "Grande Ourse",
+    "description": "La Grande Ourse, avec sa forme de casserole, aide à repérer l’étoile polaire qui indique le nord céleste.",
+    "options": [
+      {
+        "value": "cassiopee",
+        "label": "Cassiopée"
+      },
+      {
+        "value": "grande_ourse",
+        "label": "La Grande Ourse"
+      },
+      {
+        "value": "orion",
+        "label": "Orion"
+      }
+    ],
+    "correct_value": "grande_ourse"
+  },
+  {
+    "id": 9,
+    "image": "croix_du_sud.png",
+    "name": "9) Quelle constellation est visible uniquement dans l’hémisphère sud ?",
+    "wiki": "https://fr.wikipedia.org/wiki/Croix_du_Sud",
+    "namer": "Croix du Sud",
+    "description": "La Croix du Sud est un repère emblématique des navigateurs de l’hémisphère sud, invisible depuis l’Europe.",
+    "options": [
+      {
+        "value": "croix_sud",
+        "label": "La Croix du Sud"
+      },
+      {
+        "value": "orion",
+        "label": "Orion"
+      },
+      {
+        "value": "cassiopee",
+        "label": "Cassiopée"
+      }
+    ],
+    "correct_value": "croix_sud"
+  },
+  {
+    "id": 10,
+    "image": "88constellations.png",
+    "name": "10) Combien de constellations officielles compte aujourd’hui le ciel selon l’UAI ?",
+    "wiki": "https://fr.wikipedia.org/wiki/Liste_des_constellations",
+    "namer": "88 constellations",
+    "description": "Il existe 88 constellations reconnues officiellement, réparties entre les hémisphères nord et sud, représentant l’ensemble de la voûte céleste.",
+    "options": [
+      {
+        "value": "48",
+        "label": "48"
+      },
+      {
+        "value": "88",
+        "label": "88"
+      },
+      {
+        "value": "120",
+        "label": "120"
+      }
+    ],
+    "correct_value": "88"
+  }
+]

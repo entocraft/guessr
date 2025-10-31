@@ -65,9 +65,12 @@
   height: auto;
 }
 
-.bento-left:hover h2,
-.bento-card:hover h3 {
+.bento-left:hover h2 {
   font-size: 1.5em;            /* smaller on hover to make room */
+}
+
+.bento-card:hover h3 {
+  font-size: 1.2em;            /* smaller on hover to make room */
 }
 
 .content-wrapper {

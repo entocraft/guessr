@@ -1,22 +1,33 @@
+/* Layout */
 .bento {
     display: flex;
     gap: 16px;
     align-items: stretch;
-    min-height: 360px;
+    min-height: 500px;
 }
 
+.bento-left,
+.bento-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    text-decoration: none;
+    color: inherit;
+    border-radius: 15px;
+    padding: 16px;
+    transition: transform 0.15s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+
+/* bento-left overrides */
 .bento-left {
     flex: 0 0 66%;
     background: #f5f7fb;
-    border-radius: 8px;
     padding: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    color: inherit;
 }
 
+/* bento-right & small */
 .bento-right {
     flex: 0 0 33%;
     display: flex;
@@ -24,36 +35,131 @@
     gap: 16px;
 }
 
-.bento-card {
-    background: #ffffff;
-    border-radius: 8px;
-    padding: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    color: inherit;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
-}
-
 .bento-small {
     flex: 1 1 0;
 }
 
+/* Headings & paragraphs */
 .bento-left h2,
 .bento-card h3 {
-    margin: 0 0 8px 0;
-    font-weight: 600;
+  margin: 0 0 8px 0;
+  font-weight: 600;
+  text-align: left;
+  font-size: 2.5em;            /* BIG when not hovered */
+  transition: font-size 0.3s ease;
 }
 
 .bento-left p,
-.bento-card p {
-    margin: 0;
-    color: #555;
+.bento-card p,
+.play-button {
+  opacity: 0;
+  height: 0;
+  transition: all 0.3s ease;
 }
 
-.bento-card:hover,
-.bento-left:hover {
-    transform: translateY(-2px);
-    transition: transform .15s ease;
+.bento-left:hover p,
+.bento-card:hover p,
+.bento-left:hover .play-button,
+.bento-card:hover .play-button {
+  opacity: 1;
+  height: auto;
+}
+
+.bento-left:hover h2,
+.bento-card:hover h3 {
+  font-size: 1.5em;            /* smaller on hover to make room */
+}
+
+.content-wrapper {
+  background: transparent;              /* no panel until hover */
+  border-radius: 10px;
+  padding: 15px;
+  margin: 10px;
+  width: calc(100% - 20px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  /* show by default */
+  transform: none;
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.text-content {
+    flex: 1;
+}
+
+.bento-left:hover .content-wrapper,
+.bento-card:hover .content-wrapper {
+  background: #1b1e27;
+  transform: translateY(0);
+}
+
+.bento-left:hover p,
+.bento-card:hover p,
+.bento-left:hover .play-button,
+.bento-card:hover .play-button {
+    opacity: 1;
+    height: auto;
+}
+
+/* Play button */
+.play-button {
+    background: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 1.2em;
+    margin-left: 20px;
+    opacity: 0;
+    height: 0;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+#gtc, #gtl, #gto {
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-shadow: 0 0 5px rgba(0,0,0,0.7);
+    position: relative;
+    overflow: hidden;
+}
+
+#gtc { background-image: url('../img/TLS.webp'); }
+#gtl { background-image: url('../img/TLS_VAL.jpg'); }
+#gto { background-image: url('../img/TLS_OPE.jpeg'); }
+
+#gtc * {
+    position: relative;
+    z-index: 1;
+}
+
+#gtc::before,
+#gtc::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 0;
+    will-change: opacity;
+}
+
+#gtc::before { background-image: url('../img/NY.webp'); animation: gtcfade-before 30s infinite ease-in-out; }
+#gtc::after  { background-image: url('../img/TKY.webp'); animation: gtcfade-after 30s infinite ease-in-out; }
+
+@keyframes gtcfade-before {
+    0%, 30%   { opacity: 0; }
+    33%, 60%  { opacity: 1; }
+    66%, 100% { opacity: 0; }
+}
+@keyframes gtcfade-after {
+    0%, 60%   { opacity: 0; }
+    61%, 99%  { opacity: 1; }
+    100%      { opacity: 0; }
 }

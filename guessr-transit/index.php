@@ -1,9 +1,3 @@
-<?php
-// index.php — page principale du quiz constellation
-// ouverture session et clear le tableau des scores
-session_start();
-$_SESSION['question_score']=array();
-?>
 <!doctype html>
 <html lang="fr">
 <head>
@@ -16,41 +10,55 @@ $_SESSION['question_score']=array();
 <body>
   <header class="header">
     <div class="nav-links">
-        <a href="../index.html" class="nav-item">Accueil</a>
-        <a href="#" class="nav-item">Transit</a>
-        <a href="#" class="nav-item">Tennis</a>
-        <a href="#" class="nav-item">Ghibli</a>
+      <a href="../index.html" class="nav-item">Accueil</a>
+      <a href="#" class="nav-item">Transit</a>
+      <a href="#" class="nav-item">Tennis</a>
+      <a href="#" class="nav-item">Ghibli</a>
     </div>
     <h3 class="logo" aria-label="GUESSR">GUESSR</h3>
   </header>
+
   <main class="container">
     <div class="play-bento">
-        <div class="bento" role="navigation" aria-label="Bento menu">
-            <a class="bento-left" href="#transit" aria-label="Transit big card">
-                <div>
-                    <h2>Transit</h2>
-                    <p>Large card — description or CTA for the Transit quiz.</p>
-                </div>
-            </a>
+      <div class="bento" role="navigation" aria-label="Bento menu">
 
-            <div class="bento-right">
-                <a class="bento-card bento-small" href="#transit-1" aria-label="Transit small card 1">
-                    <div>
-                        <h3>Transit — Round 1</h3>
-                        <p>Short description</p>
-                    </div>
-                </a>
-
-                <a class="bento-card bento-small" href="#transit-2" aria-label="Transit small card 2">
-                    <div>
-                        <h3>Transit — Round 2</h3>
-                        <p>Short description</p>
-                    </div>
-                </a>
+        <!-- LEFT BIG CARD -->
+        <a id="gtc" class="bento-left" href="#transit" aria-label="Transit big card">
+          <div class="content-wrapper">
+            <div class="text-content">
+              <h2>Transit City</h2>
+              <p>Devinez la ville selon son système de transport</p>
             </div>
+            <span class="play-button" aria-hidden="false">Jouer</span>
+          </div>
+        </a>
+
+        <!-- RIGHT COLUMN WITH TWO SMALL CARDS -->
+        <div class="bento-right">
+
+          <a id="gtl" class="bento-card bento-small" href="#transit-1" aria-label="Transit small card 1">
+            <div class="content-wrapper">
+              <div class="text-content">
+                <h3>Transit Line</h3>
+                <p>Devinez la ligne de transport</p>
+              </div>
+              <span class="play-button">Jouer</span>
+            </div>
+          </a>
+
+          <a id="gto" class="bento-card bento-small" href="#transit-2" aria-label="Transit small card 2">
+            <div class="content-wrapper">
+              <div class="text-content">
+                <h3>Transit Operator</h3>
+                <p>Devinez l'opérateur qui gère le réseau</p>
+              </div>
+              <span class="play-button">Jouer</span>
+            </div>
+          </a>
+
         </div>
+      </div>
     </div>
   </main>
-  <script src="assets/js/homepage.js"></script>
 </body>
 </html>

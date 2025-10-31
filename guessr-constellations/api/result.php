@@ -15,12 +15,12 @@ foreach ($_SESSION['question_score']['question'] as $score){
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Guessr Constellation — Quiz</title>
-  <link rel="stylesheet" href="../assets/css/homepage.css">
+  <link rel="stylesheet" href="../../commons/css/homepage.css">
 </head>
 <body>
   <header class="header">
     <div class="nav-links">
-        <a href="../index.html" class="nav-item">Accueil</a>
+        <a href="../../index.html" class="nav-item">Accueil</a>
         <a href="#" class="nav-item">Transit</a>
         <a href="#" class="nav-item">Tennis</a>
         <a href="#" class="nav-item">Ghibli</a>

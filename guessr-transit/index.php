@@ -23,7 +23,7 @@
       <div class="bento" role="navigation" aria-label="Bento menu">
 
         <!-- LEFT BIG CARD -->
-        <a id="gtc" class="bento-left" href="#transit" aria-label="Transit big card">
+        <a id="gtc" class="bento-left" href="./guessr.php" aria-label="Transit big card">
           <div class="content-wrapper">
             <div class="text-content">
               <h2>Transit City</h2>

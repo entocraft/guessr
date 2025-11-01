@@ -27,6 +27,24 @@
       font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
       display:grid;place-items:center;padding:24px;
     }
+
+    /* Base labels */
+    .stn-name{ fill:#fff; transition:opacity .12s ease, fill .12s ease; }
+
+    /* Labels that are hidden by default (for stations with hideLabel:true) */
+    .stn-name.hidden{ opacity:0; visibility:hidden; }
+
+    /* When hovering any station, mute all labels */
+    .map-wrap.hovering .stn-name{ fill:#9aa0a6 !important; opacity:.6; }
+
+    /* ...except the hovered station: show its label at full white */
+    .map-wrap.hovering g.station.is-hovered .stn-name{
+    opacity:1; visibility:visible; fill:#fff !important;
+    }
+
+    /* Nice to have */
+    #stations g.station{ cursor:pointer; }
+
     .quiz-card{position:relative;width:var(--card-w);height:var(--card-h);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);background:#02040a;isolation:isolate;}
     .quiz-card::after{content:"";position:absolute;inset:0;background:radial-gradient(120% 120% at 18% 40%, rgba(255,255,255,.06), transparent 55%) no-repeat;pointer-events:none;z-index:0;}
     .quiz-content{position:relative;z-index:1;height:100%;display:grid;grid-template-columns:1fr var(--panel-w);}
@@ -102,31 +120,31 @@
       "theme": { "lineColor": "#e30613" },
       "svg": {
         "mode": "simple",
-        "y": 220, "xLeft": 60, "xRight": 740, "lineWidth": 10,
+        "y": 220, "xLeft": 60, "xRight": 1035, "lineWidth": 10,
         "dot": { "outer": 12, "core": 8 },
         "label": { "fontSize": 12, "margin": 14 }
       },
       "endCaps": { "emphasizeEnds": true },
       "labelPattern": "alternate",
       "stations": [
-        { "name": "Basso-Cambo", "terminal": true },
-        { "name": "Bellefontaine", "hideLabel": true },
-        { "name": "Reynerie" },
-        { "name": "Mirail-Université", "hideLabel": true },
-        { "name": "Bagatelle" },
-        { "name": "Mermoz", "hideLabel": true },
-        { "name": "Fontaine-Lestang" },
-        { "name": "Arènes", "interchange": true },
-        { "name": "Patte-d’Oie", "hideLabel": true },
-        { "name": "Saint-Cyprien — République" },
-        { "name": "Esquirol", "hideLabel": true },
-        { "name": "Capitole" },
-        { "name": "Jean-Jaurès", "interchange": true, "big": true },
-        { "name": "Marengo — SNCF", "hideLabel": true },
-        { "name": "Jolimont" },
-        { "name": "Roseraie", "hideLabel": true },
-        { "name": "Argoulets" },
-        { "name": "Balma-Gramont", "terminal": true }
+        { "name": "Basso-Cambo",                "labelPos": "n", "big": true },
+        { "name": "Bellefontaine",              "labelPos": "n", "hideLabel": true },
+        { "name": "Reynerie",                   "labelPos": "n", "hideLabel": true },
+        { "name": "Mirail-Université",          "labelPos": "n", "hideLabel": true },
+        { "name": "Bagatelle",                  "labelPos": "n", "hideLabel": true },
+        { "name": "Mermoz",                     "labelPos": "n", "hideLabel": true },
+        { "name": "Fontaine-Lestang",           "labelPos": "n", "hideLabel": true },
+        { "name": "Arènes",                     "labelPos": "n", "hideLabel": true },
+        { "name": "Patte-d’Oie",                "labelPos": "n", "hideLabel": true },
+        { "name": "Saint-Cyprien — République", "labelPos": "n", "hideLabel": true },
+        { "name": "Esquirol",                   "labelPos": "n", "hideLabel": true },
+        { "name": "Capitole",                   "labelPos": "n", "hideLabel": true },
+        { "name": "Jean-Jaurès",                "labelPos": "n", "hideLabel": true },
+        { "name": "Marengo — SNCF",             "labelPos": "n", "hideLabel": true },
+        { "name": "Jolimont",                   "labelPos": "n", "hideLabel": true },
+        { "name": "Roseraie",                   "labelPos": "n", "hideLabel": true },
+        { "name": "Argoulets",                  "labelPos": "n", "hideLabel": true },
+        { "name": "Balma-Gramont",              "labelPos": "n", "big": true }
       ],
       "choices": ["Marseille","Toulouse","Lyon","Bordeaux"],
       "correctCity": "Toulouse"
@@ -139,84 +157,98 @@
       "theme": { "lineColor": "#f6e016" },
       "svg": {
         "mode": "simple",
-        "y": 220, "xLeft": 60, "xRight": 740, "lineWidth": 10,
+        "y": 220, "xLeft": 60, "xRight": 1035, "lineWidth": 10,
         "dot": { "outer": 10, "core": 6 },
         "label": { "fontSize": 12, "margin": 14 }
       },
       "endCaps": { "emphasizeEnds": true },
       "labelPattern": "alternate",
       "stations": [
-        { "name": "Borderouge", "big": true, "terminal": true },
-        { "name": "Trois-Cocus", "hideLabel": true },
-        { "name": "La Vache" },
-        { "name": "Barrière de Paris", "hideLabel": true },
-        { "name": "Minimes — Claude Nougaro" },
-        { "name": "Canal du Midi", "hideLabel": true },
-        { "name": "Compans-Caffarelli" },
-        { "name": "Jeanne d’Arc", "hideLabel": true },
-        { "name": "Jean-Jaurès", "interchange": true, "big": true, "labelGap": 18 },
-        { "name": "Carmes", "hideLabel": true },
-        { "name": "François Verdier" },
-        { "name": "Saint-Michel — Marcel Langer", "hideLabel": true },
-        { "name": "Empalot" },
-        { "name": "Sainte-Agne — SNCF", "hideLabel": true },
-        { "name": "Saouzelong" },
-        { "name": "Rangueil", "hideLabel": true },
-        { "name": "Faculté de Pharmacie" },
-        { "name": "Université Paul-Sabatier", "hideLabel": true },
-        { "name": "Ramonville", "big": true, "terminal": true }
+        { "name": "Borderouge",                    "labelPos": "n", "big": true },
+        { "name": "Trois-Cocus",                   "labelPos": "n", "hideLabel": true },
+        { "name": "La Vache",                      "labelPos": "n", "hideLabel": true },
+        { "name": "Barrière de Paris",             "labelPos": "n", "hideLabel": true },
+        { "name": "Minimes — Claude Nougaro",      "labelPos": "n", "hideLabel": true },
+        { "name": "Canal du Midi",                 "labelPos": "n", "hideLabel": true },
+        { "name": "Compans-Caffarelli",            "labelPos": "n", "hideLabel": true },
+        { "name": "Jeanne d’Arc",                  "labelPos": "n", "hideLabel": true },
+        { "name": "Jean-Jaurès",                   "labelPos": "n", "hideLabel": true },
+        { "name": "Carmes",                        "labelPos": "n", "hideLabel": true },
+        { "name": "François Verdier",              "labelPos": "n", "hideLabel": true },
+        { "name": "Saint-Michel — Marcel Langer",  "labelPos": "n", "hideLabel": true },
+        { "name": "Empalot",                       "labelPos": "n", "hideLabel": true },
+        { "name": "Sainte-Agne — SNCF",            "labelPos": "n", "hideLabel": true },
+        { "name": "Saouzelong",                    "labelPos": "n", "hideLabel": true },
+        { "name": "Rangueil",                      "labelPos": "n", "hideLabel": true },
+        { "name": "Faculté de Pharmacie",          "labelPos": "n", "hideLabel": true },
+        { "name": "Université Paul-Sabatier",      "labelPos": "n", "hideLabel": true },
+        { "name": "Ramonville",                    "labelPos": "n",  "big": true }
       ],
       "choices": ["Lille","Toulouse","Rennes","Paris"],
       "correctCity": "Toulouse"
     },
 
     {
-      "title": "Ligne 13 (fourche)",
+      "title": "Ligne 13",
       "operator": "RATP — Métro",
       "city": "Paris",
-      "theme": { "lineColor": "#6ec4e8" },
+      "theme": { "lineColor": "#8ad3de" },
       "svg": { "mode": "poly", "lineWidth": 10, "dot": { "outer": 10, "core": 6 }, "label": { "fontSize": 15, "margin": 14 } },
       "paths": [
-        { "id": "upper_parallel", "points": [[80,150],[170,150],[220,150],[260,150]] },
-        { "id": "lower_parallel", "points": [[20,290],[90,290],[150,290],[210,290]] },
+        { "id": "upper_parallel", "points": [[120,150],[170,150],[220,150],[260,150]] },
+        { "id": "lower_parallel", "points": [[60,290],[90,290],[150,290],[260,290]] },
         { "id": "upper_curve",   "points": [[260,150],[275,160],[290,180],[305,200],[315,210],[325,215],[335,218],[345,219],[355,220]] },
-        { "id": "lower_curve",   "points": [[210,290],[225,280],[240,265],[255,245],[270,230],[285,223],[300,221],[315,220],[330,220]] },
+        { "id": "lower_curve",   "points": [[260,290],[275,280],[290,265],[305,245],[315,230],[325,223],[335,221],[345,220],[355,220]] },
         { "id": "trunk",         "points": [[355,220],[1035,220]] }
       ],
       "stations": [
-        { "name": "Les Courtilles", "on": "upper_parallel", "t": 0.00, "labelPos": "n", "big": true },
-        { "name": "Les Agnettes",   "on": "upper_parallel", "t": 0.30, "labelPos": "s", "hideLabel": true },
-        { "name": "Gabriel Péri",   "on": "upper_parallel", "t": 0.58, "labelPos": "n", "hideLabel": true },
-        { "name": "Mairie de Clichy","on":"upper_parallel", "t": 0.82, "labelPos": "s", "hideLabel": true },
-        { "name": "Porte de Clichy","on":"upper_parallel",  "t": 1.00, "labelPos": "n", "hideLabel": true },
-        { "name": "Brochant",       "on": "upper_curve",    "t": 0.46, "labelPos": "n", "hideLabel": true },
+        { "name": "Les Courtilles",            "on": "upper_parallel", "t": 0.000, "labelPos": "n", "big": true },
+        { "name": "Les Agnettes",              "on": "upper_parallel", "t": 0.200, "labelPos": "n", "hideLabel": true },
+        { "name": "Gabriel Péri",              "on": "upper_parallel", "t": 0.400, "labelPos": "n", "hideLabel": true },
+        { "name": "Mairie de Clichy",          "on": "upper_parallel", "t": 0.600, "labelPos": "n", "hideLabel": true },
+        { "name": "Porte de Clichy",           "on": "upper_parallel", "t": 0.800, "labelPos": "n", "hideLabel": true },
+        { "name": "Brochant",                  "on": "upper_parallel", "t": 1.000, "labelPos": "n", "hideLabel": true },
 
-        { "name": "Saint-Denis—Université",   "on": "lower_parallel", "t": 0.00, "labelPos": "s", "big": true },
-        { "name": "Basilique de Saint-Denis", "on": "lower_parallel", "t": 0.18, "labelPos": "n", "hideLabel": true },
-        { "name": "Saint-Denis—Porte de Paris","on":"lower_parallel","t": 0.38, "labelPos": "s", "hideLabel": true },
-        { "name": "Carrefour Pleyel",         "on": "lower_parallel", "t": 0.62, "labelPos": "n", "hideLabel": true },
-        { "name": "Mairie de Saint-Ouen",     "on": "lower_parallel", "t": 0.90, "labelPos": "s", "hideLabel": true },
-        { "name": "Garibaldi",                "on": "lower_curve",    "t": 0.22, "labelPos": "s", "hideLabel": true },
-        { "name": "Porte de Saint-Ouen",      "on": "lower_curve",    "t": 0.45, "labelPos": "n", "hideLabel": true },
-        { "name": "Guy Môquet",               "on": "lower_curve",    "t": 0.72, "labelPos": "s", "hideLabel": true },
+        { "name": "Saint-Denis—Université",    "on": "lower_parallel", "t": 0.000, "labelPos": "s", "big": true },
+        { "name": "Basilique de Saint-Denis",  "on": "lower_parallel", "t": 0.143, "labelPos": "s", "hideLabel": true },
+        { "name": "Saint-Denis—Porte de Paris","on": "lower_parallel", "t": 0.286, "labelPos": "s", "hideLabel": true },
+        { "name": "Carrefour Pleyel",          "on": "lower_parallel", "t": 0.429, "labelPos": "s", "hideLabel": true },
+        { "name": "Mairie de Saint-Ouen",      "on": "lower_parallel", "t": 0.572, "labelPos": "s", "hideLabel": true },
+        { "name": "Garibaldi",                 "on": "lower_parallel", "t": 0.715, "labelPos": "s", "hideLabel": true },
+        { "name": "Porte de Saint-Ouen",       "on": "lower_parallel", "t": 0.858, "labelPos": "s", "hideLabel": true },
+        { "name": "Guy Môquet",                "on": "lower_parallel", "t": 1.000, "labelPos": "s", "hideLabel": true },
 
-        { "name": "La Fourche",               "on": "trunk", "t": 0.00, "labelPos": "n", "big": true },
-        { "name": "Saint-Lazare",             "on": "trunk", "t": 0.165, "labelPos": "s", "big": true, "hideLabel": true },
-        { "name": "Montparnasse—Bienvenüe",   "on": "trunk", "t": 0.55,  "labelPos": "n", "hideLabel": true },
-        { "name": "Châtillon—Montrouge",      "on": "trunk", "t": 1.00,  "labelPos": "s", "big": true }
+        { "name": "La Fourche",                "on": "trunk", "t": 0.0000, "labelPos": "n", "big": true },
+        { "name": "Place de Clichy",           "on": "trunk", "t": 0.0588, "labelPos": "n", "hideLabel": true },
+        { "name": "Liège",                     "on": "trunk", "t": 0.1176, "labelPos": "n", "hideLabel": true },
+        { "name": "Saint-Lazare",              "on": "trunk", "t": 0.1764, "labelPos": "n", "hideLabel": true },
+        { "name": "Miromesnil",                "on": "trunk", "t": 0.2352, "labelPos": "n", "hideLabel": true },
+        { "name": "Champs-Élysées-Clemenceau", "on": "trunk", "t": 0.2940, "labelPos": "n", "hideLabel": true },
+        { "name": "Montparnasse—Bienvenüe",    "on": "trunk", "t": 0.3528, "labelPos": "n", "hideLabel": true },
+        { "name": "Varenne",                   "on": "trunk", "t": 0.4116, "labelPos": "n", "hideLabel": true },
+        { "name": "Saint-François-Xavier",     "on": "trunk", "t": 0.4704, "labelPos": "n", "hideLabel": true },
+        { "name": "Duroc",                     "on": "trunk", "t": 0.5292, "labelPos": "n", "hideLabel": true },
+        { "name": "Montparnasse - Bienvenüe",  "on": "trunk", "t": 0.5880, "labelPos": "n", "hideLabel": true },
+        { "name": "Gaîté",                     "on": "trunk", "t": 0.6468, "labelPos": "n", "hideLabel": true },
+        { "name": "Pernety",                   "on": "trunk", "t": 0.7056, "labelPos": "n", "hideLabel": true },
+        { "name": "Plaisance",                 "on": "trunk", "t": 0.7644, "labelPos": "n", "hideLabel": true },
+        { "name": "Porte de Vanves",           "on": "trunk", "t": 0.8232, "labelPos": "n", "hideLabel": true },
+        { "name": "Malakoff-Plateau de Vanves","on": "trunk", "t": 0.8820, "labelPos": "n", "hideLabel": true },
+        { "name": "Malakoff-Rue Étienne Dolet","on": "trunk", "t": 0.9408, "labelPos": "n", "hideLabel": true },
+        { "name": "Châtillon—Montrouge",       "on": "trunk", "t": 1.0000, "labelPos": "n", "big": true }
       ],
       "choices": ["Paris","Lille","Lyon","Toulouse"],
       "correctCity": "Paris"
     },
 
     {
-      "title": "Métro Ligne 1",
+      "title": "Ligne 1",
       "operator": "RATP — Métro",
       "city": "Paris",
       "theme": { "lineColor": "#ffd800" },
       "svg": {
         "mode": "simple",
-        "y": 220, "xLeft": 60, "xRight": 740, "lineWidth": 10,
+        "y": 220, "xLeft": 60, "xRight": 1035, "lineWidth": 10,
         "dot": { "outer": 11, "core": 7 },
         "label": { "fontSize": 12, "margin": 12 }
       },
@@ -367,6 +399,30 @@ function svgEl(name, attrs = {}, children = []) {
   return n;
 }
 
+function setupHoverUI(){
+  const mapWrap = document.querySelector('.map-wrap');
+  if (!mapWrap) return;
+
+  // Clear previous
+  mapWrap.querySelectorAll('#stations g.station').forEach(g=>{
+    g.onmouseover = g.onmouseout = null;
+  });
+
+  mapWrap.querySelectorAll('#stations g.station').forEach(g=>{
+    g.addEventListener('mouseover', ()=>{
+      mapWrap.classList.add('hovering');
+      g.classList.add('is-hovered');
+    });
+    g.addEventListener('mouseout', ()=>{
+      g.classList.remove('is-hovered');
+      // If no station remains hovered, remove global “hovering”
+      if (!mapWrap.querySelector('#stations g.station.is-hovered')) {
+        mapWrap.classList.remove('hovering');
+      }
+    });
+  });
+}
+
 function ensureDefs(svgRoot) {
   const defs = svgEl('defs', {}, [
     svgEl('filter', {
@@ -393,6 +449,12 @@ function drawStationDot(g, outer, core, opts = {}) {
   // base
   g.appendChild(svgEl('circle', { r: String(o), fill: color }));
   g.appendChild(svgEl('circle', { r: String(c), fill: '#fff' }));
+  g.appendChild(svgEl('circle', {
+    r: String((outer ?? 10) + 16),
+    fill: 'transparent',
+    'pointer-events': 'all'
+  }));
+
 
   // interchange ring (white ring)
   if (opts.interchange) {
@@ -418,19 +480,17 @@ function drawStationDot(g, outer, core, opts = {}) {
 /* Label with margin from dot edge */
 function placeLabel(g, text, pos='n', fontSize=11, outerRadius=8, gap=10) {
   const d = (outerRadius || 0) + (gap || 0);
-  let anchor = 'middle', x = 0, y = 0;
-  if (pos === 'n') { x = 0;  y = -d; anchor = 'middle'; }
-  else if (pos === 's'){ x = 0;  y =  d; anchor = 'middle'; }
-  else if (pos === 'e'){ x =  d; y =  0; anchor = 'start';  }
-  else if (pos === 'w'){ x = -d; y =  0; anchor = 'end';    }
-  else { x = 0; y = -d; anchor = 'middle'; }
+  let anchor = 'start', x = 0, y = 0;
+  if (pos === 'n') { x = 10;  y = -d; anchor = 'start'; }
+  else if (pos === 's'){ x = 0;  y =  d; anchor = 'end'; }
+  else { x = 0; y = -d; anchor = 'start'; }
 
   const t = svgEl('text', {
     class: 'stn-name',
     'text-anchor': anchor,
     x: String(x),
     y: String(y),
-    style: `font: 600 ${fontSize}px/1.1 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; fill:#fff;`
+    style: `font: 600 ${fontSize}px/1.1 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; fill:#fff;transform: rotate(-45deg);`
   });
 
   const parts = text.includes('—')
@@ -463,6 +523,8 @@ function renderSimple(svgRoot, spec) {
     const st = (typeof raw === 'string') ? { name: raw } : raw;
     const x = xLeft + step * i;
     const g = svgEl('g', { transform: `translate(${x},${y})` });
+    g.classList.add('station');
+
 
     const isBig = !!st.big || !!st.terminal;
     const outer = st.outer ?? (isBig ? dot.outer + 4 : dot.outer);
@@ -477,9 +539,14 @@ function renderSimple(svgRoot, spec) {
     else if (spec.labelPattern === 'below') pos = 's';
     else pos = (i === 0 || i === n - 1) ? 'n' : (i % 2 === 0 ? 'n' : 's');
 
-    if (!st.hideLabel && st.name) {
-      const gap = (spec.svg?.label?.margin ?? 12);
-      placeLabel(g, st.name, pos, label.fontSize ?? 11, outer, st.labelGap ?? gap);
+    // Always create the label; hide it if hideLabel is true
+    if (st.name) {
+        const gap = (spec.svg?.label?.margin ?? 12);
+        placeLabel(g, st.name, pos, label.fontSize ?? 11, outer, st.labelGap ?? gap);
+        if (st.hideLabel) {
+            const t = g.querySelector('.stn-name');
+            if (t) t.classList.add('hidden');
+        }
     }
 
     gStations.appendChild(g);
@@ -523,6 +590,7 @@ function renderPoly(svgRoot, spec) {
     if (px == null || py == null) return;
 
     const g = svgEl('g', { transform: `translate(${px},${py})` });
+    g.classList.add('station');
 
     const isBig = !!s.big || !!s.terminal;
     const outer = s.outer ?? (isBig ? dot.outer + 4 : dot.outer);
@@ -530,9 +598,13 @@ function renderPoly(svgRoot, spec) {
 
     drawStationDot(g, outer, core, { interchange: !!s.interchange, terminal: !!s.terminal });
 
-    if (!s.hideLabel && s.name) {
-      const gap = (spec.svg?.label?.margin ?? 12);
-      placeLabel(g, s.name, s.labelPos || 'n', label.fontSize ?? 11, outer, s.labelGap ?? gap);
+    if (s.name) {
+        const gap = (spec.svg?.label?.margin ?? 12);
+        placeLabel(g, s.name, s.labelPos || 'n', label.fontSize ?? 11, outer, s.labelGap ?? gap);
+        if (s.hideLabel) {
+            const t = g.querySelector('.stn-name');
+            if (t) t.classList.add('hidden');
+        }
     }
 
     gStations.appendChild(g);
@@ -597,6 +669,7 @@ function renderLine(svgRoot, spec) {
     applyTheme(q);
     renderLine(document.getElementById('map'), q);
     renderChoices(q);
+    setupHoverUI();               // ← add this
   }
 
   // kick off
